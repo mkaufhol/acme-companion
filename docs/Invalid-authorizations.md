@@ -56,6 +56,10 @@ Both are required. Every domain on `LETSENCRYPT_HOST`**must** be on `VIRTUAL_HOS
 
 Pull `nginxproxy/acme-companion:latest` again and get the latest [latest nginx.tmpl](https://raw.githubusercontent.com/nginx-proxy/nginx-proxy/main/nginx.tmpl).
 
+#### you deleted the cert volume from a previous setup
+
+If you already had an running setup and deleted the `certs` docker volume or the certificates for some reason, the acme container won't be able to regenerate those. Revoke the old cetificates according to the [letsencrypt documentation](https://letsencrypt.org/docs/revoking/#using-a-different-authorized-account) using [certbot](https://certbot.eff.org/).
+
 
 ***
 
